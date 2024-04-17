@@ -104,3 +104,9 @@ body {
 .card-title {
     color: white;
 }
+
+img.img-fluid{
+  width: 600px;
+  height: 800px;
+}
+
