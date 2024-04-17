@@ -1,0 +1,25 @@
+.columna {
+    color: white;
+    font-size: 25px;
+    background: linear-gradient(45deg, #ff0000, #0000ff);
+    border: 5px solid white;
+}
+
+.row {
+    background: linear-gradient(45deg, #ff0000, #0000ff);
+    border: 3px solid brown;
+    padding: 5px;
+    margin: 10px;
+}
+
+.card {
+    background: linear-gradient(45deg, #ff0000, #0000ff);
+}
+
+.card-text {
+    color: white;
+}
+
+.card-title {
+    color: white;
+}
