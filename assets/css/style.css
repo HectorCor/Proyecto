@@ -23,7 +23,7 @@ body {
 
   .carousel-inner img {
     margin: 0 auto; /* Centrar horizontalmente las imágenes */
-}
+  }
   
   .navbar a {
     float: left;
