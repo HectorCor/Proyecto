@@ -5,7 +5,11 @@ function creartarjetasproductosinicio(productos){
         const nuevocomic =document.createElement("div");
         nuevocomic.classList = "tarjeta-producto";
         nuevocomic.innerHTML = `
-            <img src="productos/${producto.id}.jpg">
+            <img src="${producto.img}">
+            <h3>${producto.nombre}</h3>
+            <p>${producto.descripcion}</p>
+            <h6>$${producto.precio} CLP</h6>
+            <button>agregar al carrito</button>
             `
         contenedortarjetas.appendChild(nuevocomic);
     });

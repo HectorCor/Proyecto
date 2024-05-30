@@ -110,3 +110,23 @@ img.img-fluid{
   height: 800px;
 }
 
+/*productos del js*/
+
+#productos-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.tarjeta-producto{
+  max-width: 400px;
+  text-align: center;
+  background-color: blue;
+}
+
+.tarjeta-producto img{
+  width: 100%;
+}
+
