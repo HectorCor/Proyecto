@@ -74,8 +74,11 @@ body {
     text-align: center;
     padding: 10px;
     margin-top: auto;
-}  
-  
+    width: 100%;
+    left:0px;
+    bottom:0px;
+    width:100%;
+  }
 
 -----------
 
@@ -125,6 +128,7 @@ img.img-fluid{
   text-align: center;
   background-color: blue;
   padding: 10px;
+  border: black 5px double;
 }
 
 .tarjeta-producto img{
