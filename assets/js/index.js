@@ -12,6 +12,7 @@ function creartarjetasproductosinicio(productos){
             <button>agregar al carrito</button>
             `
         contenedortarjetas.appendChild(nuevocomic);
+        nuevocomic.getElementsByTagName("button")[0].addEventListener("click",()=> agregaralcarrito(producto))
     });
 }
 

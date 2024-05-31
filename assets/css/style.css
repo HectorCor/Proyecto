@@ -117,11 +117,11 @@ img.img-fluid{
   flex-wrap: wrap;
   gap: 20px;
   max-width: 1300px;
-  margin: auto;
+  margin:auto;
 }
 
 .tarjeta-producto{
-  max-width: 400px;
+  max-width: 300px;
   text-align: center;
   background-color: blue;
   padding: 10px;
