@@ -124,6 +124,7 @@ img.img-fluid{
   max-width: 400px;
   text-align: center;
   background-color: blue;
+  padding: 10px;
 }
 
 .tarjeta-producto img{
