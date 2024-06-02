@@ -126,7 +126,7 @@ img.img-fluid{
 .tarjeta-producto{
   max-width: 300px;
   text-align: center;
-  background-color: blue;
+  background-color: rgb(116, 58, 164);
   padding: 10px;
   border: black 5px double;
 }
