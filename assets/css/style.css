@@ -135,3 +135,7 @@ img.img-fluid{
   width: 100%;
 }
 
+.escondido{
+  display: none;
+}
+

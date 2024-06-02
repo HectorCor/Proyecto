@@ -19,10 +19,10 @@ function agregaralcarrito(producto) {
             nuevamemoria[indiceproducto].cantidad++;
             cuenta = nuevamemoria[indiceproducto].cantidad;
         }
-        localStorage.setItem("comics", JSON.stringify([nuevoproducto]));
-        return cuenta;
-    }   
+        localStorage.setItem("comics", JSON.stringify(nuevamemoria));
+    }
     actualizarnumerocarrito();
+    return cuenta;
 }
 
 function restaralcarrito(producto) {
@@ -34,6 +34,7 @@ function restaralcarrito(producto) {
         memoria[indiceproducto].cantidad--;
     }
     localStorage.setItem("comics", JSON.stringify(memoria));
+    actualizarnumerocarrito();
 }
 
 
@@ -50,7 +51,14 @@ function getnuevoproductoparamemoria(producto) {
 const cuentacarritoelement = document.getElementById("cuenta carrito");
 function actualizarnumerocarrito() {
     const memoria = JSON.parse(localStorage.getItem("comics"));
-    const cuenta = memoria.reduce((acum, current) => acum + current.cantidad, 0);
+    if (memoria && memoria.length > 0) {
+        const cuenta = memoria.reduce((acum, current) => acum + current.cantidad, 0);
+        cuentacarritoelement.innerText = cuenta;
+        console.log(cuenta)
+    } else {
+        cuentacarritoelement.innerText = 0;
+    }
+
 }
 
 actualizarnumerocarrito();
