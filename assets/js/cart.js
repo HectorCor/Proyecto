@@ -58,14 +58,14 @@ function actualizartotales() {
 function revisarmensajevacio() {
     const productos = JSON.parse(localStorage.getItem("comics"));
     console.log(productos, productos == true)
-    carritovacioelement.classList.toggle("escondido", productos && productos.length>0);
-    totaleselement.classList.toggle("escondido", !(productos && productos.length>0));
+    carritovacioelement.classList.toggle("escondido", productos && productos.length > 0);
+    totaleselement.classList.toggle("escondido", !(productos && productos.length > 0));
 }
 
 revisarmensajevacio();
 
-reiniciarcarritoelement.addEventListener("click",reiniciarcarrito);
-function reiniciarcarrito(){
+reiniciarcarritoelement.addEventListener("click", reiniciarcarrito);
+function reiniciarcarrito() {
     localStorage.removeItem("comics");
     actualizartotales();
     creartarjetasproductosinicio();

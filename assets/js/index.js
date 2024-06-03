@@ -1,8 +1,8 @@
 const contenedortarjetas = document.getElementById("productos-container");
 
-function creartarjetasproductosinicio(productos){
+function creartarjetasproductosinicio(productos) {
     productos.forEach(producto => {
-        const nuevocomic =document.createElement("div");
+        const nuevocomic = document.createElement("div");
         nuevocomic.classList = "tarjeta-producto";
         nuevocomic.innerHTML = `
             <img src="${producto.img}">
@@ -12,7 +12,7 @@ function creartarjetasproductosinicio(productos){
             <button>agregar al carrito</button>
             `
         contenedortarjetas.appendChild(nuevocomic);
-        nuevocomic.getElementsByTagName("button")[0].addEventListener("click",()=> agregaralcarrito(producto))
+        nuevocomic.getElementsByTagName("button")[0].addEventListener("click", () => agregaralcarrito(producto))
     });
 }
 

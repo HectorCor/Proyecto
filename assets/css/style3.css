@@ -19,11 +19,12 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%; /* Posiciona el menú directamente debajo de la barra de búsqueda */
+    top: 100%;
+    /* Posiciona el menú directamente debajo de la barra de búsqueda */
     left: 0;
     background-color: #fff;
     min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
