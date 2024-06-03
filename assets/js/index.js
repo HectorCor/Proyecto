@@ -1,19 +1,17 @@
-const contenedortarjetas = document.getElementById("productos-container");
+const contenedorTarjetas = document.getElementById("productos-container");
 
-function creartarjetasproductosinicio(productos) {
-    productos.forEach(producto => {
-        const nuevocomic = document.createElement("div");
-        nuevocomic.classList = "tarjeta-producto";
-        nuevocomic.innerHTML = `
-            <img src="${producto.img}">
-            <h3>${producto.nombre}</h3>
-            <p>${producto.descripcion}</p>
-            <h6>$${producto.precio} CLP</h6>
-            <button>agregar al carrito</button>
-            `
-        contenedortarjetas.appendChild(nuevocomic);
-        nuevocomic.getElementsByTagName("button")[0].addEventListener("click", () => agregaralcarrito(producto))
-    });
+/** Crea las tarjetas de productos teniendo en cuenta la lista en bicicletas.js */
+function crearTarjetasProductosInicio(productos){
+  productos.forEach(producto => {
+    const nuevocomic = document.createElement("div");
+    nuevocomic.classList = "tarjeta-producto"
+    nuevocomic.innerHTML = `
+    <img src="./img/productos/${producto.id}.jpg">
+    <h3>${producto.nombre}</h3>
+    <p class="precio">$${producto.precio}</p>
+    <button>Agregar al carrito</button>`
+    contenedorTarjetas.appendChild(nuevocomic);
+    nuevocomic.getElementsByTagName("button")[0].addEventListener("click",() => agregarAlCarrito(producto))
+  });
 }
-
-creartarjetasproductosinicio(comics);
+crearTarjetasProductosInicio(comics);

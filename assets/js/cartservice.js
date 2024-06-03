@@ -1,64 +1,67 @@
-function agregaralcarrito(producto) {
-    const memoria = JSON.parse(localStorage.getItem("comics"));
-    console.log(memoria);
-    let cuenta = 0;
-    if (!memoria) {
-        const nuevoproducto = producto;
-        nuevoproducto.cantidad = 1;
-        localStorage.setItem("comics", JSON.stringify([nuevoproducto]));
-        cuenta = 1;
+const cuentaCarritoElement = document.getElementById("cuenta-carrito");
+
+/** Toma un objeto producto o un objeto con al menos un ID y lo agrega al carrito */
+function agregarAlCarrito(producto){
+  //Reviso si el producto está en el carrito.
+  let memoria = JSON.parse(localStorage.getItem("comics"));
+  let cantidadProductoFinal;
+  //Si no hay localstorage lo creo
+  if(!memoria || memoria.length === 0) {
+    const nuevoProducto = getNuevoProductoParaMemoria(producto)
+    localStorage.setItem("comics",JSON.stringify([nuevoProducto]));
+    actualizarNumeroCarrito();
+    cantidadProductoFinal = 1;
+  }
+  else {
+    //Si hay localstorage me fijo si el artículo ya está ahí
+    const indiceProducto = memoria.findIndex(comic => comic.id === producto.id)
+    const nuevaMemoria = memoria;
+    //Si el producto no está en el carrito lo agrego
+    if(indiceProducto === -1){
+      const nuevoProducto = getNuevoProductoParaMemoria(producto);
+      nuevaMemoria.push(nuevoProducto);
+      cantidadProductoFinal = 1;
     } else {
-        const indiceproducto = memoria.findindex(comic => comic.id)
-        console.log(indiceproducto)
-        if (indiceproducto === -1) {
-            const nuevamemoria = memoria;
-            nuevamemoria.push(getnuevoproductoparamemoria(producto))
-            localStorage.setItem("comics", JSON.stringify(nuevamemoria));
-            cuenta = 1;
-        } else {
-            nuevamemoria[indiceproducto].cantidad++;
-            cuenta = nuevamemoria[indiceproducto].cantidad;
-        }
-        localStorage.setItem("comics", JSON.stringify(nuevamemoria));
+      //Si el producto está en el carrito le agrego 1 a la cantidad.
+      nuevaMemoria[indiceProducto].cantidad ++;
+      cantidadProductoFinal = nuevaMemoria[indiceProducto].cantidad;
     }
-    actualizarnumerocarrito();
-    return cuenta;
+    localStorage.setItem("comics",JSON.stringify(nuevaMemoria));
+    actualizarNumeroCarrito();
+    return cantidadProductoFinal;
+  }
 }
 
-function restaralcarrito(producto) {
-    const memoria = JSON.parse(localStorage.getItem("comics"));
-    const indiceproducto = memoria.findindex(comic => comic.id);
-    if (memoria[indiceproducto].cantidad === 1) {
-        memoria.splice(indiceproducto, 1);
-    } else {
-        memoria[indiceproducto].cantidad--;
-    }
-    localStorage.setItem("comics", JSON.stringify(memoria));
-    actualizarnumerocarrito();
+/** Resta una unidad de un producto del carrito */
+function restarAlCarrito(producto){
+  let memoria = JSON.parse(localStorage.getItem("comics"));
+  let cantidadProductoFinal = 0;
+  const indiceProducto = memoria.findIndex(comic => comic.id === producto.id)
+  let nuevaMemoria = memoria;
+  nuevaMemoria[indiceProducto].cantidad--;
+  cantidadProductoFinal = nuevaMemoria[indiceProducto].cantidad;
+  if(cantidadProductoFinal === 0){
+    nuevaMemoria.splice(indiceProducto,1)
+  };
+  localStorage.setItem("comics",JSON.stringify(nuevaMemoria));
+  actualizarNumeroCarrito();
+  return cantidadProductoFinal;
 }
 
-
-
-
-
-/** toma nuevo producto  le agrega cantidad 1 y lo devuelve */
-function getnuevoproductoparamemoria(producto) {
-    const nuevoproducto = producto;
-    nuevoproducto.cantidad = 1;
-    return nuevoproducto;
+/** Agrega cantidad a un objeto producto */
+function getNuevoProductoParaMemoria(producto){
+  const nuevoProducto = producto;
+  nuevoProducto.cantidad = 1;
+  return nuevoProducto;
 }
 
-const cuentacarritoelement = document.getElementById("cuenta carrito");
-function actualizarnumerocarrito() {
-    const memoria = JSON.parse(localStorage.getItem("comics"));
-    if (memoria && memoria.length > 0) {
-        const cuenta = memoria.reduce((acum, current) => acum + current.cantidad, 0);
-        cuentacarritoelement.innerText = cuenta;
-        console.log(cuenta)
-    } else {
-        cuentacarritoelement.innerText = 0;
-    }
-
+/** Actualiza el número del carrito del header */
+function actualizarNumeroCarrito(){
+  let cuenta = 0;
+  const memoria = JSON.parse(localStorage.getItem("comics"));
+  if(memoria && memoria.length > 0){
+    cuenta = memoria.reduce((acum, current)=>acum+current.cantidad,0)
+    return cuentaCarritoElement.innerText = cuenta;
+  }
+  cuentaCarritoElement.innerText = 0;
 }
-
-actualizarnumerocarrito();
