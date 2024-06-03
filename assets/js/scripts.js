@@ -1,25 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     const characters = {
         DC: [
-            { name: "Superman", img: "superman.jpg" },
-            { name: "Batman", img: "batman.jpg" },
-            { name: "Wonder Woman", img: "wonderwoman.jpg" },
-            { name: "Flash", img: "flash.jpg" },
-            { name: "Aquaman", img: "aquaman.jpg" }
+            { name: "Superman", img: "./assets/img/personajes/superman.jpg"},
+            { name: "Batman", img: "./assets/img/personajes/batman.jpg" },
+            { name: "Wonder Woman", img: "./assets/img/personajes/wonderwoman.jpg" },
+            { name: "Flash", img: "./assets/img/personajes/flash.jpg" },
+            { name: "Aquaman", img: "./assets/img/personajes/aquaman.jpg" }
         ],
         Marvel: [
-            { name: "Spider-Man", img: "spiderman.jpg" },
-            { name: "Iron Man", img: "ironman.jpg" },
-            { name: "Captain America", img: "captainamerica.jpg" },
-            { name: "Thor", img: "thor.jpg" },
-            { name: "Hulk", img: "hulk.jpg" }
+            { name: "Spider-Man", img: "./assets/img/personajes/spiderman.jpg" },
+            { name: "Iron Man", img: "./assets/img/personajes/ironman.jpg" },
+            { name: "Capitan America", img: "./assets/img/personajes/capitanamerica.jpg" },
+            { name: "Thor", img: "./assets/img/personajes/thor.jpg" },
+            { name: "Hulk", img: "./assets/img/personajes/hulk.jpg" }
         ],
         Anime: [
-            { name: "Goku", img: "goku.jpg" },
-            { name: "Naruto", img: "naruto.jpg" },
-            { name: "Luffy", img: "luffy.jpg" },
-            { name: "Ichigo", img: "ichigo.jpg" },
-            { name: "Sailor Moon", img: "sailormoon.jpg" }
+            { name: "Goku", img: "./assets/img/personajes/goku.jpg" },
+            { name: "Naruto", img: "./assets/img/personajes/naruto.jpg" },
+            { name: "Luffy", img: "./assets/img/personajes/luffy.jpg" },
+            { name: "Ichigo", img: "./assets/img/personajes/ichigo.jpg" },
+            { name: "Sailor Moon", img: "./assets/img/personajes/sailormoon.jpg" }
         ]
     };
 
