@@ -6,9 +6,10 @@ function crearTarjetasProductosInicio(productos){
     const nuevocomic = document.createElement("div");
     nuevocomic.classList = "tarjeta-producto"
     nuevocomic.innerHTML = `
-    <img src="./img/productos/${producto.id}.jpg">
+    <img src="${producto.img}">
     <h3>${producto.nombre}</h3>
     <p class="precio">$${producto.precio}</p>
+    <h5 class="descripcion">${producto.descripcion}</h5>
     <button>Agregar al carrito</button>`
     contenedorTarjetas.appendChild(nuevocomic);
     nuevocomic.getElementsByTagName("button")[0].addEventListener("click",() => agregarAlCarrito(producto))
